@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Russo One', sans-serif;
+}
+
+.SignUpPage {
+    height: 100vh;
+    width: 100vw;
+}
+
+#sign-up-form-box {
+    height: 30vh;
+    width: 30vw;
+    margin-left: auto;
+    margin-right: 3vw;
+    padding-top: 30vh;
+}
+
+.centered {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#sign-up-welcome-message {
+    font-size: 1.7em;
+    margin-bottom: 1vh;
+}
+
+.sign-up-field-box {
+    margin-bottom: 1vh;
+    width: 70%;
+}
+
+.sign-up-field-error-box {
+    margin-bottom: 1vh;
+    width: 70%;
+}
+
+.sign-up-field-error-message {
+    font-size: 0.8em;
+    color: #d9534f;
+}
