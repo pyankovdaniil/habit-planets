@@ -1,0 +1,35 @@
+.SignInPage {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(243, 245, 247);
+}
+
+#sign-in-main-container {
+    width: 30vw;
+    height: 70vh;
+    margin: 15vh 35vw 15vh 35vw;
+
+    background-color: rgb(235, 240, 248);
+    border-radius: 5%;
+
+    padding: 3%;
+    padding-top: 20vh;
+
+    position: absolute;
+}
+
+#sign-in-welcome-message {
+    font-size: 1.4em;
+    margin-bottom: 6vh;
+}
+
+#sign-in-redirect-message {
+    font-size: 0.85rem;
+    margin-top: 1vh;
+}
+
+#sign-up-form-link {
+    text-decoration: none;
+    margin-right: 6px;
+    color: rgb(93, 110, 239);
+}
