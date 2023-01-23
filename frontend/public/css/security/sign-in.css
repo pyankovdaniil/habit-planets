@@ -1,0 +1,44 @@
+.sign-in-page {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(243, 245, 247);
+}
+
+.sign-in-container {
+    width: 40vw;
+    height: 80vh;
+    margin-top: 10vh;
+    margin-left: 30vw;
+
+    background-color: rgb(235, 240, 248);
+    border-radius: 5%;
+
+    padding: 5%;
+    padding-top: 20vh;
+
+    position: absolute;
+}
+
+.sign-in-welcome-message {
+    font-size: 1.9em;
+    margin-bottom: 6vh;
+}
+
+.sign-in-redirect-message {
+    font-size: 1rem;
+    margin-top: 1vh;
+}
+
+.sign-up-form-link {
+    text-decoration: none;
+    margin-right: 6px;
+    color: rgb(93, 110, 239);
+}
+
+.error-message {
+    margin: 3vh 0;
+    background-color: rgb(243, 118, 106);
+    border-radius: 20px;
+    font-size: 1.4em;
+    padding: 5%;
+}

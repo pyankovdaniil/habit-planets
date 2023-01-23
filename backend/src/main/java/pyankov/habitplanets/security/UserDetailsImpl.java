@@ -1,11 +1,13 @@
 package pyankov.habitplanets.security;
 
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import pyankov.habitplanets.model.User;
 
 import java.util.Collection;
 
+@Getter
 public class UserDetailsImpl implements UserDetails {
     private final User user;
 

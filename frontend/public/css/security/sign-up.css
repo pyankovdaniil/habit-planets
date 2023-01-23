@@ -1,0 +1,96 @@
+.sign-up-page {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(248, 252, 255);
+}
+
+.sign-up-container {
+    width: 65vw;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.sign-up-info-box {
+    width: 40%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgb(235, 240, 248);
+    border-radius: 5%;
+}
+
+.sign-up-form-box {
+    width: 60%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5%;
+    background-color: rgb(250, 237, 255);
+    border-radius: 5%;
+}
+
+.centered {
+    align-items: center;
+    text-align: center;
+}
+
+.sign-up-welcome-message {
+    font-size: 1.4em;
+    margin-bottom: 3vh;
+}
+
+.sign-up-redirect-message {
+    font-size: 0.85rem;
+    margin-top: 1vh;
+}
+
+.sign-in-form-link {
+    text-decoration: none;
+    margin-right: 4px;
+    color: rgb(93, 110, 239);
+}
+
+.sign-up-field-box {
+    margin-bottom: 2vh;
+}
+
+.valid {
+    padding: 10px;
+    margin-left: 1rem;
+    background-color: rgb(88, 244, 122);
+}
+
+.invalid {
+    padding: 10px;
+    margin-left: 1rem;
+    background-color: rgb(237, 71, 71);
+}
+
+.hide {
+    display: none;
+}
+
+.instructions-icon {
+    margin-right: 6px;
+}
+
+.instructions {
+    background-color: rgb(184, 178, 178);
+    border-radius: 10px;
+    margin-top: 1vh;
+    font-size: 0.85rem;
+    padding: 1vh;
+}
+
+.sign-up-success-message {
+    font-size: 2.4em;
+    margin-bottom: 3vh;
+    margin-top: 35%;
+}
+
+.sign-up-success-redirect-message {
+    margin-top: 1vh;
+    font-size: 1.3rem;
+}
