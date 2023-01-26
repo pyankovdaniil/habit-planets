@@ -5,6 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { InputLabel } from '@mui/material';
 import { Link } from "react-router-dom";
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 const FULLNAME_MIN_LENGTH = 3;
 const FULLNAME_MAX_LENGTH = 40;
@@ -45,6 +49,8 @@ const SignUp = () => {
 
     const [errorMessage, setErrorMessage] = useState('');
     const [isSuccessRegistration, setIsSuccessRegistration] = useState(false);
+
+    const [showPassword, setShowPassword] = useState(false);
 
     useEffect(() => {
         userRef.current.focus();
@@ -99,6 +105,12 @@ const SignUp = () => {
     useEffect(() => {
         setErrorMessage('');
     }, [fullName, email, username, password, matchPassword])
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
 
     const onFormSubmit = async (e) => {
         e.preventDefault();
@@ -308,7 +320,7 @@ const SignUp = () => {
                                     </InputLabel>
 
                                     <TextField
-                                        type="password"
+                                        type={showPassword ? 'text' : 'password'}
                                         size="small"
                                         fullWidth
                                         color="secondary"
@@ -321,8 +333,20 @@ const SignUp = () => {
                                         aria-describedby="password-sign-up-note"
                                         onFocus={() => setIsPasswordInFocus(true)}
                                         onBlur={() => setIsPasswordInFocus(false)}
-                                        label="Пароль"
                                         variant="outlined"
+                                        InputProps={{
+                                            endAdornment: <InputAdornment position="end">
+                                                <IconButton
+                                                    aria-label="toggle password visibility"
+                                                    onClick={handleClickShowPassword}
+                                                    onMouseDown={handleMouseDownPassword}
+                                                    edge="end"
+                                                >
+                                                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                </IconButton>
+                                            </InputAdornment>,
+                                        }}
+                                        label="Пароль"
                                     />
                                     <p id="password-sign-up-note"
                                         className={(isPasswordInFocus && password && !isValidPassword) ? "instructions" : "hide"}>
@@ -349,7 +373,7 @@ const SignUp = () => {
                                     </InputLabel>
 
                                     <TextField
-                                        type="password"
+                                        type={showPassword ? 'text' : 'password'}
                                         size="small"
                                         fullWidth
                                         color="secondary"
@@ -364,6 +388,19 @@ const SignUp = () => {
                                         onBlur={() => setIsMatchPasswordInFocus(false)}
                                         label="Повторите пароль"
                                         variant="outlined"
+                                        InputProps={{
+                                            endAdornment: <InputAdornment position="end">
+                                                <IconButton
+                                                    aria-label="toggle password visibility"
+                                                    onClick={handleClickShowPassword}
+                                                    onMouseDown={handleMouseDownPassword}
+                                                    edge="end"
+                                                >
+                                                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                </IconButton>
+                                            </InputAdornment>,
+                                        }}
+
                                     />
                                     <p id="match-password-sign-up-note"
                                         className={(isMatchPasswordInFocus && !isValidMatchPassword) ? "instructions" : "hide"}>

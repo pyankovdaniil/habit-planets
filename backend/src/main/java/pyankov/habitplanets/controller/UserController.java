@@ -20,7 +20,7 @@ public class UserController {
             UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
             return new ResponseEntity<>(new MessageDTO(userDetails.getUsername()), HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(new MessageDTO("You are not authenticated!"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new MessageDTO("You are not authenticated!"), HttpStatus.UNAUTHORIZED);
         }
     }
 }

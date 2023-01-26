@@ -6,12 +6,13 @@ const UserPage = () => {
   const { auth } = useAuth();
 
   useEffect(() => {
-    
   }, []);
 
   return (
     <Box className="user-page">
-        {auth?.username || "No username"}
+        <Box className="active-user-page">
+            <p className="username-text">Вы вошли в аккаунт: {auth?.username}</p>
+        </Box>
     </Box>
   )
 }

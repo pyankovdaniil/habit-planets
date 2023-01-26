@@ -7,6 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import axios from "../api/axios";
 import useAuth from '../hooks/useAuth';
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+
 
 const LOGIN_URL = '/sign-in';
 
@@ -38,6 +43,8 @@ const SignIn = () => {
 
     const [errorMessage, setErrorMessage] = useState('');
 
+    const [showPassword, setShowPassword] = useState(false);
+
     useEffect(() => {
         userRef.current.focus();
     }, []);
@@ -64,6 +71,12 @@ const SignIn = () => {
     useEffect(() => {
         setErrorMessage('');
     }, [username, password]);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
 
     const onFormSubmit = async (e) => {
         e.preventDefault();
@@ -183,7 +196,7 @@ const SignIn = () => {
                         </InputLabel>
 
                         <TextField
-                            type="password"
+                            type={showPassword ? 'text' : 'password'}
                             size="small"
                             fullWidth
                             color="secondary"
@@ -199,6 +212,18 @@ const SignIn = () => {
                             onBlur={() => setIsPasswordInFocus(false)}
                             label="Пароль"
                             variant="outlined"
+                            InputProps={{
+                                endAdornment: <InputAdornment position="end">
+                                    <IconButton
+                                        aria-label="toggle password visibility"
+                                        onClick={handleClickShowPassword}
+                                        onMouseDown={handleMouseDownPassword}
+                                        edge="end"
+                                    >
+                                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                                    </IconButton>
+                                </InputAdornment>,
+                            }}
                         />
                         <p id="password-sign-up-note"
                             className={(isPasswordInFocus && password && !isValidPassword) ? "instructions" : "hide"}>
