@@ -29,9 +29,19 @@
 
 ## Информация о базах данных:
 В проекте использовалась следующая структура баз данных:
+![database-structure.png](frontend/public/img/database-structure.png)
 
 В таблице user хранятся данные пользователей, их пароли зашифрованы алгоритмом Bcrypt
 
 ## Интерфейс приложения:
 1. При успешном вводе всех полей при регистрации:
 ![sign-up-ok.jpg](frontend/public/img/sign-up-ok.jpg)
+
+2. При невалидных введенных данных
+![sign-up-not-ok.jpg](frontend/public/img/sign-up-not-ok.jpg)
+
+3. При неправильном логине и пароле при входе в аккаунт
+![sign-in-not-ok.jpg](frontend/public/img/sign-in-not-ok.jpg)
+
+4. При успешном входе в аккаунт
+![sign-in-ok.jpg](frontend/public/img/sign-in-ok.jpg)
